@@ -15,11 +15,17 @@ const reducer = (state,action) => {
     switch (action.colorToChange) {
         case 'red':
             //rebuild entire state object if we want to change
-            return { ...state, red: state.red + action.amount };
+            return state.red + action.amount > 255 || state.red + action.amount < 0 
+                ? state 
+                : { ...state, red: state.red + action.amount };
         case 'green':
-            return { ...state, green: state.green + action.amount };
+            return state.green + action.amount > 255 || state.green + action.amount < 0 
+                ? state 
+                : { ...state, green: state.red + action.amount };
         case 'blue':
-            return { ...state, blue: state.blue + action.amount };        
+            return state.blue + action.amount > 255 || state.blue + action.amount < 0 
+                ? state 
+                : { ...state, blue: state.blue + action.amount };       
         default:
             return state;
     }
@@ -38,18 +44,24 @@ const SquareScreen = () => {
             {/* here color is a variable not a style ,it is used for props */}
             <ColorCounter 
                 colorName="Red" 
-                onIncrease={()=> dispatch({colorToChange:'red',amount:COLOR_INCREMENT})}
-                onDecrease={()=> dispatch({colorToChange:'red',amount:-1 * COLOR_INCREMENT})}
+                onIncrease={()=>
+                     dispatch({colorToChange:'red',amount:COLOR_INCREMENT})}
+                onDecrease={()=> 
+                     dispatch({colorToChange:'red',amount:-1 * COLOR_INCREMENT})}
                 />
             <ColorCounter 
                 colorName="Blue" 
-                onIncrease={()=> dispatch({colorToChange:'blue',amount:COLOR_INCREMENT})}
-                onDecrease={()=> dispatch({colorToChange:'blue',amount:-1 * COLOR_INCREMENT})}
+                onIncrease={()=> 
+                    dispatch({colorToChange:'blue',amount:COLOR_INCREMENT})}
+                onDecrease={()=> 
+                    dispatch({colorToChange:'blue',amount:-1 * COLOR_INCREMENT})}
                 />
             <ColorCounter 
                 colorName="Green" 
-                onIncrease={()=> dispatch({colorToChange:'green',amount:COLOR_INCREMENT})}
-                onDecrease={()=> dispatch({colorToChange:'green',amount:-1 * COLOR_INCREMENT})}
+                onIncrease={()=> 
+                    dispatch({colorToChange:'green',amount:COLOR_INCREMENT})}
+                onDecrease={()=> 
+                    dispatch({colorToChange:'green',amount:-1 * COLOR_INCREMENT})}
                 />
     {/* Here The Container of Color will Shows up  on pressing Button Click increase or decrease*/}
             <View 
