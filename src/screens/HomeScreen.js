@@ -37,6 +37,12 @@ const HomeScreen = ({navigation}) => {
             navigation.navigate('ColorSc', { name: 'Davinder' })
              }
         />
+        <Button
+           title="Go to Square Color Counter Demo"
+            onPress={() =>
+            navigation.navigate('SquareSc', { name: 'Davinder' })
+             }
+        />
         <TouchableOpacity onPress={()=>navigation.navigate('List')}>
             <Text style={styles.textStyle}>Go To List!</Text>
             <Text style={styles.textStyle}>Go To List!</Text>
