@@ -43,6 +43,12 @@ const HomeScreen = ({navigation}) => {
             navigation.navigate('SquareSc', { name: 'Davinder' })
              }
         />
+        <Button
+           title="Go to TextScreen Demo"
+            onPress={() =>
+            navigation.navigate('TextScr', { name: 'Davinder' })
+             }
+        />
         <TouchableOpacity onPress={()=>navigation.navigate('List')}>
             <Text style={styles.textStyle}>Go To List!</Text>
             <Text style={styles.textStyle}>Go To List!</Text>
