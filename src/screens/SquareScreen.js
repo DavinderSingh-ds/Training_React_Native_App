@@ -27,8 +27,9 @@ const reducer = (state,action) => {
 };
 
 const SquareScreen = () => {
-
+    // dispatch == runMyReducer
     const [state,dispatch] = useReducer(reducer,{red:0 , green: 0, blue: 0});
+    const {red, green, blue} = state;
 
     // console.log(state); // all objects stored in the state variable red:0,green:0,blue:0
 
@@ -37,19 +38,18 @@ const SquareScreen = () => {
             {/* here color is a variable not a style ,it is used for props */}
             <ColorCounter 
                 colorName="Red" 
-                onIncrease={()=> }
-                onDecrease={()=> }
-                
+                onIncrease={()=> dispatch({colorToChange:'red',amount:COLOR_INCREMENT})}
+                onDecrease={()=> dispatch({colorToChange:'red',amount:-1 * COLOR_INCREMENT})}
                 />
             <ColorCounter 
                 colorName="Blue" 
-                onIncrease={()=> }
-                onDecrease={()=> }
+                onIncrease={()=> dispatch({colorToChange:'blue',amount:COLOR_INCREMENT})}
+                onDecrease={()=> dispatch({colorToChange:'blue',amount:-1 * COLOR_INCREMENT})}
                 />
             <ColorCounter 
-                colorName="Green"
-                onIncrease={()=> }
-                onDecrease={()=> }
+                colorName="Green" 
+                onIncrease={()=> dispatch({colorToChange:'green',amount:COLOR_INCREMENT})}
+                onDecrease={()=> dispatch({colorToChange:'green',amount:-1 * COLOR_INCREMENT})}
                 />
     {/* Here The Container of Color will Shows up  on pressing Button Click increase or decrease*/}
             <View 
@@ -57,6 +57,8 @@ const SquareScreen = () => {
                     height:150,
                     width:150,
                     backgroundColor:`rgb(${red},${green},${blue})`,
+                    //or we can use state.red, state.blue,state.green istead of using this use 
+                    //  const {red, green, blue} = state; above
                 }}
                 />    
         </View>
