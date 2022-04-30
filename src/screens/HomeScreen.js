@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text , StyleSheet,Button,View,TouchableOpacity} from 'react-native';
+import {Text , StyleSheet,Button,View,TouchableOpacity,ScrollView} from 'react-native';
 
 
 const HomeScreen = ({navigation}) => {
     // console.log(navigation);
     return (
+        <ScrollView>
         <View>
         <Text style={styles.textStyle}>Hi There!</Text>
         <Button
@@ -62,6 +63,7 @@ const HomeScreen = ({navigation}) => {
         </TouchableOpacity>
       
         </View>
+        </ScrollView>
     );
 };
 

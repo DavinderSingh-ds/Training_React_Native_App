@@ -9,12 +9,6 @@ const ComponentsScreen = () => {
       <Text styles={styles.textStyle}>This is App Screen</Text>
       {/* {greeting} */}
       <Text style={styles.subHeaderStyle}>My Name is {name}</Text>
-      {/* <Button
-           title="Go to HomeScreen"
-            onPress={() =>
-            navigation.navigate('Home', { name: 'Davinder' })
-             }
-        /> */}
       </View>
     );
 };
@@ -22,7 +16,7 @@ const ComponentsScreen = () => {
 const styles = StyleSheet.create({
     textStyle: {
         fontSize:60,
-        color:'red'
+        color:'black'
        
     },
     subHeaderStyle:{

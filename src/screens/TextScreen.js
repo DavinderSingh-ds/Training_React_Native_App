@@ -23,7 +23,7 @@ const TextScreen = () => {
                 autoCapitalize="none"
                 autoCorrect={false}   
                 value={password}   
-                onChangeText={(newValue) => setName(newValue)}              
+                onChangeText={(newValue) => setPassword(newValue)}              
             />
             {password.length < 4 
                 ? <Text style={{color:'red'}}>Password must be atleaast 4 characters</Text> 
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     input: {
         margin: 15,
         borderColor: 'black',
-        borderWidth: 1
+        borderWidth: 1,
+        color:'black'
     },
     textStyle: {
         color:'black'
