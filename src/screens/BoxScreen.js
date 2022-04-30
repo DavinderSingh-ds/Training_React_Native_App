@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'red',
         color: 'black',
-        margin: 20,
+        // margin: 20,
         // marginVertical: 20,
         // marginHorizontal: 20,
         // flex:4
@@ -40,7 +40,9 @@ const styles = StyleSheet.create({
         color: 'black',
         // margin: 20,
         // flex:4,
-        alignSelf: 'flex-end',
+        // alignSelf: 'flex-end',
+        // position: 'absolute',
+        
     },
     textThreeStyle: {
         borderWidth: 2,
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
         color: 'black',
         // margin: 20,
         // flex:2,
-        alignSelf: 'stretch',
+        // alignSelf: 'stretch',
     }
 });
 
