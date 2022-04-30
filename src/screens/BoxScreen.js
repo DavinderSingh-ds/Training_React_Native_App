@@ -3,30 +3,37 @@ import {Text,View,StyleSheet} from 'react-native';
 
 const BoxScreen = () => {
     return (
-        <View styles={styles.viewStyle}>
-            <Text style={styles.textOneStyle}>Child #1</Text>
-            <Text style={styles.textTwoStyle}>Child #2</Text>
-            <Text style={styles.textThreeStyle}>Child #3</Text>
+        <View styles={styles.parentStyle}>
+            {/* <Text style={styles.textOneStyle}>Child #1</Text>
+            <Text style={styles.textOneStyle}>Child #2</Text>
+            <Text style={styles.textOneStyle}>Child #3</Text> */}
+            <View style={styles.viewOneStyle}/>
+            <View style = {styles.viewTwoParent}>
+            <View style={styles.viewTwoStyle}/>
+            </View>
+            <View style={styles.viewThreeStyle}/>
         </View>
     );
 
 };
 
 const styles = StyleSheet.create({
-    viewStyle: {
+    parentStyle: {
         borderWidth: 2,
         borderColor: 'black',
         // alignItems: 'flex-start',
         flexDirection: 'column',
-        height: 600,
-        justifyContent: 'space-around',
+        height: 100,
+        justifyContent: 'space-between',
         // flexDirection: 'row'
         // alignItems: 'flex-end',
-        alignItems: 'center',
+        // alignItems: 'center',
     },
-    textOneStyle: {
+    viewOneStyle: {
+        height: 50,
+        width: 50,
         borderWidth: 2,
-        borderColor: 'red',
+        borderColor: 'green',
         color: 'black',
         // margin: 20,
         // marginVertical: 20,
@@ -34,20 +41,36 @@ const styles = StyleSheet.create({
         // flex:4
         
     },
-    textTwoStyle: {
+    viewTwoStyle: {
         borderWidth: 2,
-        borderColor: 'red',
+        borderColor: 'blue',
         color: 'black',
+        height: 50,
+        width: 50,
         // margin: 20,
         // flex:4,
         // alignSelf: 'flex-end',
         // position: 'absolute',
-        
+        // both are same  
+        // from this to ...
+        // top: 0,
+        // right: 0,
+        // bottom: 0,
+        // left: 0,
+        // ...StyleSheet.absoluteFillObject,
+        // this...
     },
-    textThreeStyle: {
+    viewTwoParent: {
+        height: 100,
+        justifyContent: 'flex-end',
+    },  
+    viewThreeStyle: {
+        height: 50,
+        width: 50,
         borderWidth: 2,
         borderColor: 'red',
         color: 'black',
+
         // margin: 20,
         // flex:2,
         // alignSelf: 'stretch',
